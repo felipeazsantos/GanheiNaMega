@@ -7,7 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Random
-import kotlin.math.sign
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,12 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            var resultVal = ""
-            for (num in numbers) {
-                resultVal += " ${num}"
-            }
-
-            textResult.text = resultVal
+            textResult.text = numbers.joinToString(" - ")
         } else {
             Toast.makeText(this, "Informe um número entre 6 e 15", Toast.LENGTH_LONG).show()
         }
